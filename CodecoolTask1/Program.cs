@@ -44,7 +44,9 @@ namespace CodecoolTask1
 
             //MiddleTemp();
 
-            Coffee();
+            //Coffee();
+
+            Console.WriteLine( Task56( ));
 
 
 
@@ -423,6 +425,36 @@ namespace CodecoolTask1
             }
             Console.WriteLine("Put in {0}", basicValue);
 
+        }
+        static double Task56()
+        {
+            double result = 0;
+
+            Console.Write("Enter a number: ");
+            double number1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter a number: ");
+            double number2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter an operator: ");
+            string op = Console.ReadLine();
+
+            MathClass t1 = new MathClass(number1, number2, op);
+
+            if(t1.op == "+")
+            {
+                result = t1.number1 + t1.number2;
+            }else if(t1.op == "-")
+            {
+                result = Math.Abs(t1.number1 - number2);
+            }else if(t1.op == "/")
+            {
+                result = t1.number1 / t1.number2;
+            }else if(t1.op == "*")
+            {
+                result = t1.number1 * t1.number2;
+            }
+            return result;
         }
         
 
